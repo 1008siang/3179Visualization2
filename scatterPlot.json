@@ -1,11 +1,12 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 400,
-  "height": 400,
-  "description": "A scatterplot showing horsepower and miles per gallons for various cars.",
+  "width": 950,
+  "height": 500,
+  "title": "How Fertility Rate affects the Median Age of a Country",
   "data": {
-    "url": "https://raw.githubusercontent.com/J1008sianG/FIT3179Homework/main/PopulationOfAsia.csv"
+    "url": "https://raw.githubusercontent.com/J1008sianG/3179Visualization2/main/PopulationOfAsia.csv"
   },
+  "background":"#D1EEEE",
   "params": [
     {
       "name": "Age_Above",
@@ -135,14 +136,14 @@
     }
   ],
   "transform": [
-    {"filter": "datum.Med > Age_Above"},
+    {"filter": "datum.MedianAge > Age_Above"},
     {
       "filter": "Country_selection == null || datum.Country == Country_selection"
     }
   ],
   "encoding": {
-    "x": {"field": "Med", "type": "quantitative", "title": "Median Age"},
-    "y": {"field": "Fert", "type": "quantitative", "title": "Fertility rate"}
+    "x": {"field": "MedianAge", "type": "quantitative", "title": "Median Age"},
+    "y": {"field": "FertilityRate", "type": "quantitative", "title": "Fertility Rate"}
   },
   "layer": [
     {
@@ -236,7 +237,7 @@
               "#18B637",
               "#010066",
               "#CE1126",
-              "DC143C",
+              "#DC143C",
               "#024fa2",
               "#000095",
               "#FFBF24",
@@ -274,11 +275,15 @@
         "tooltip": [
           {"field": "Country", "type": "nominal"},
           {"field": "Density", "type": "quantitative", "format": ","},
-          {"field": "Med", "type": "quantitative", "format": ","},
-          {"field": "Fert", "type": "quantitative", "format": ","}
+          {"field": "MedianAge", "type": "quantitative", "format": ","},
+          {"field": "FertilityRate", "type": "quantitative", "format": ","}
         ]
       }
     }
   ],
-  "config": {}
+  "config": {
+    "view": {
+       "stroke": "transparent"
+    }
+  }
 }

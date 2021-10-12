@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 990,
+  "width": 980,
   "height": 500,
-  "title": "Population Density in Asia",
+  "title": "Median Age of Different Countries in Asia",
   "projection": {"type": "equalEarth"},
   "data": {
     "url": "https://raw.githubusercontent.com/J1008sianG/FIT3179Homework/main/custom.geo%20(2).json",
@@ -19,13 +19,13 @@
           "url": "https://raw.githubusercontent.com/J1008sianG/3179Visualization2/main/PopulationOfAsia.csv"
         },
         "key": "Country",
-        "fields": ["Density"]
+        "fields": ["MedianAge"]
       }
     }
   ],
   "mark": {"type": "geoshape"},
   "encoding": {
-    "color": {"field": "Density", "type": "quantitative"},
+    "color": {"field": "MedianAge", "type": "quantitative"},
     "fillOpacity": {"condition": {"param": "select", "value": 1}, "value": 0.3},
     "strokeWidth": {
       "condition": [{"param": "select", "empty": false, "value": 2}],
@@ -33,7 +33,7 @@
     },
     "tooltip": [
       {"field": "properties.name", "type": "nominal", "title": "Country"},
-      {"field": "Density", "type": "quantitative"}
+      {"field": "MedianAge", "type": "quantitative"}
     ]
   },
   "config": {

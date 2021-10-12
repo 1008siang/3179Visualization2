@@ -1,0 +1,11 @@
+#r-align {
+    text-align: right;
+}
+.right {
+    float: right;
+  }
+
+.container {
+    display: flex;
+    justify-content: center;
+  }
