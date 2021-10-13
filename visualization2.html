@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+ <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+ <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+ <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+ <script src="map.js"></script>
+ <script src="plot.js"></script>
+ <link rel = "stylesheet" href = "style.css" >
+
+ <title>FIT 3179 Visualization Project 2 </title>
+</head>
+
+<body style="background-color:#ADD8E6;" >
+
+    <center>  
+        <h1 style="border:whitesmoke; border-width:5px; border-style:dashed;"> Population Density and Fertility Rate for Different Countries in Asia </h1>  
+
+        <p style="border:white; border-width:2px; border-style:solid; font-size: large; font-weight:bold;">
+            There are around 50 countries in <span style = "font-weight:bold; color: #800000;">Asia</span> and the total popualtion
+            in <span style = "font-weight:bold; color: #800000;">Asia</span> contribute approximately 50% of the world population in Year 2020.
+            <br>As of the year of 2021, the continent of <span style = "font-weight:bold; color: #800000;">Asia</span> accounts for around 60%
+            of the world population. 
+            <br>However, due to the incompleteness of the data on Year 2021, the dataset of Year 2020 will be
+            used to represent the follwing visualization.    
+        </p>
+
+        <p style="border:white; border-width:2px; border-style:solid; font-size: large; font-weight:bold;">
+            Countries having the highest population in <span style = "font-weight:bold; color: #800000;">Asia</span>?
+            <br>Here it is !!!
+        </p>
+
+        <div id = "barChart">
+        </div>
+
+        <p style="border:white; border-width:2px; border-style:solid; font-size: large; font-weight:bold;">
+            Let's have a look on the contribution of each country in the World Population.
+        </p>
+
+        <br><div id = "roseChart">
+        </div>
+
+        <p style="font-size: large;">
+           (<span style = "font-style: italic;">Click on the menu to select the specific country. </span>)
+        </p>
+
+        <div id="choroplethMap">
+        </div>
+
+        <p style="font-size: large;">
+            The first thought in mind when we talk about the population in <span style = "font-weight:bold; color: #800000;">Asia</span> 
+            will be India and China which having the <span style = "font-weight:bold; color:#964B00;">highest population</span> .
+            <br>However, these 2 countries both has a large land area of 9,388,211 kilometer square (China) and 2,973,190 kilometer square  (India). 
+            <br>Hence, instead of using the population,the population density will be more preferable to be considered as a normalized attribute.
+            <br>So, when we observe the choropleth map above, <span style = "font-weight:bold; color: #00008B;">Taiwan</span> and 
+            <span style = "font-weight:bold; color: #00008B;">Lebanon</span> are the contries having the 
+            <span style = "font-weight:bold; color: #00008B;">highest density</span> in <span style = "font-weight:bold; color: #800000;">Asia</span> .
+            <br>The most obvious similarity between them is that, both of the countires have small land area and <span style = "font-weight:bold; color:#964B00;">high population</span>.
+            (<span style = "font-style: italic;">Click on the map to observe the area. </span>)
+        </p>
+
+        <p style="border:white; border-width:2px; border-style:solid; font-size: large; font-weight:bold;">
+            The most common factor when people talk about population or population density of a country is the fertility rate.
+            <br>Does <span style = "font-weight:bold; color: #00008B;">higher fertility rate</span> indicates 
+            <span style = "font-weight:bold; color: #00008B;">higher population density</span> ?
+             The answer may be a <span style = "font-weight:bold; color: #8B0000;"> NO </span>.
+        </p>
+        
+        <div id="choroplethFertility">
+        </div>
+        <p style="font-size: large;">
+            In this case, the map above shows that <span style = "font-weight:bold; color: #00008B;">Afghanistan</span> has the highest fertility rate among the countires in Asia. 
+            <br>However, the population density of the country belongs to the lowest threshold of below 200 (people/kilometer square). 
+            <br>Besides, the 2 countries which having the <span style = "font-weight:bold; color: #00008B;">highest density</span>,<span style = "font-weight:bold; color: #00008B;">Taiwan</span> and 
+            <span style = "font-weight:bold; color: #00008B;">Lebanon</span> only has the fertility rate of 1.2 and 2.1.
+            <br> (<span style = "font-style: italic;">Click on the map to observe the area and the fertility rate. </span>)
+        </p>
+
+        <p style="border:white; border-width:2px; border-style:solid; font-size: large; font-weight:bold;">
+            Hence, we can actually conclude that, the population density of a specific country<span style = "font-weight:bold; color: #8B0000;"> was not affected </span> by the fertility rate 
+            <br> However, in the other cas that the fertility rate does affect the median age of a country.
+        </p>
+
+        <div id="choroplethMedian">
+        </div>
+        <p style="font-size: large;">
+             The most obvious example will be pointed towards <span style = "font-weight:bold; color: #be0029 ;">Japan</span> which has a 
+             <span style = "font-weight:bold; color: #9acd32;">low fertility rate</span> of 1.4 as ratio between the 
+             number of live births  <br>in a year and the whole female population of childbearing age. In other words, the number of children in the 
+             country will be fewer.
+             <br>Hence, the median age of the country will then be higher and reaches 48 which is the <span style = "font-weight:bold; color: #00008B;">highest median age</span>
+             in <span style = "font-weight:bold; color: #800000;">Asia</span>.
+        </p>
+
+        <p style="border:white; border-width:2px; border-style:solid; font-size: large;">
+            <span style = "font-weight:bold;"> The scatter plot will then better visualize how the fertility rate of a country can affects the median age.</span>
+            <br>(<span style = "font-style: italic;">Make use of the slider and the menu list to  filter the age and countries. </span>)
+        </p>
+        <div id="scatterPlot">
+        </div>
+
+    </center> 
+
+</body>
+
+</html>
