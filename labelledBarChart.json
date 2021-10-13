@@ -1,0 +1,59 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "#D1EEEE",
+  "width": 350,
+  "title": "Top 5 Countries with Highest Population in Asia",
+  "data": {
+    "values": [
+      {"Country": "China", "Population": 1439323776},
+      {"Country": "India", "Population": 1380004385},
+      {"Country": "Indonesia", "Population": 273523615},
+      {"Country": "Pakistan", "Population": 220892340},
+      {"Country": "Bangladesh", "Population": 164689383}
+    ]
+  },
+  "height": {"step": 50},
+  "mark": {
+    "type": "bar",
+    "yOffset": 5,
+    "cornerRadiusEnd": 2,
+    "height": {"band": 0.5}
+  },
+  "encoding": {
+    "y": {
+      "field": "Population",
+      "scale": {"padding": 0},
+      "axis": {
+        "bandPosition": 0,
+        "grid": true,
+        "domain": false,
+        "ticks": false,
+        "labelAlign": "left",
+        "labelBaseline": "middle",
+        "labelPadding": -5,
+        "labelOffset": -15,
+        "titleX": 5,
+        "titleY": -5,
+        "titleAngle": 0,
+        "titleAlign": "left",
+        "title": null
+      }
+    },
+    "x": {
+      "aggregate": "sum",
+      "field": "Population",
+      "axis": {"grid": false},
+      "title": "Population"
+    },
+    "color": {
+      "field": "Country",
+      "type": "nominal",
+      "scale": {
+        "domain": ["China", "India", "Indonesia", "Pakistan", "Bangladesh"],
+        "range": ["#151B54", "#000080", "#0020C2", "#0000FF", "#2B65EC"]
+      }
+    },
+    "tooltip": [{"field": "Country", "type": "nominal"}]
+  },
+  "config": {}
+}

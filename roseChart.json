@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 1000,
-  "height": 500,
-  "description": "Percentage of the Population from Different Countries in World Percentage.",
+  "width": 400,
+  "height": 400,
+  "title": "Population of the Countries in Asia contribute to the World Population.",
   "data": {
     "url": "https://raw.githubusercontent.com/J1008sianG/3179Visualization2/main/PopulationOfAsia.csv"
   },
@@ -130,7 +130,7 @@
       "filter": "Country_selection == null || datum.Country == Country_selection"
     }
   ],
-  "mark": {"type": "arc", "innerRadius": 50},
+  "mark": {"type": "arc", "innerRadius": 30},
   "encoding": {
     "theta": {"field": "World", "type": "quantitative"},
     "radius": {
