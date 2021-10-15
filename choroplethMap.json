@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 990,
+  "width": 970,
   "height": 500,
   "title": "Population Density in Asia",
   "projection": {"type": "equalEarth"},

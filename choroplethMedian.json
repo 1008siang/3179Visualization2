@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 980,
+  "width": 970,
   "height": 500,
   "title": "Median Age of Different Countries in Asia",
   "projection": {"type": "equalEarth"},
